@@ -14,7 +14,7 @@ const JobSelector = () => {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />} marginLeft="15px">
+      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         Poste
       </MenuButton>
       <MenuList>

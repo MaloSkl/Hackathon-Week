@@ -7,10 +7,9 @@ function NavBar() {
   return (
     <HStack justifyContent={"space-between"}>
       <Image
+        padding={18}
         src="https://www.6tm.com/app/uploads/2023/09/6tm_title-001.svg"
-        padding="15px"
       />
-      <SearchName />
       <EditColorMode />
     </HStack>
   );

@@ -7,6 +7,7 @@ import {
   Badge,
   Text,
   HStack,
+  Center,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import RenderIcon from "./RenderIcon";
@@ -40,12 +41,12 @@ const PersonCard = ({ person }) => {
         <Image src={isHovered ? funPhoto : proPhoto} />
       </Box>
       <CardBody>
-        <Heading fontSize="2xl">
+        <Heading textColor="white" fontSize="2xl">
           {person.firstName} {person.name}
         </Heading>
-        <HStack justifyContent={"space-between"}>
+        <HStack textColor="white" justifyContent={"space-between"}>
           <Text>{person.job}</Text>
-          <Badge borderRadius="4px" backgroundColor="#7F56D9">
+          <Badge borderRadius="4px" textColor="white" backgroundColor="#7F56D9">
             {person.agency}
           </Badge>
         </HStack>
