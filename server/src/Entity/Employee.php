@@ -13,113 +13,112 @@ class Employee
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $first_name = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $last_name = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $firstName = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $job = null;
+    #[ORM\ManyToOne(targetEntity: Job::class, inversedBy: 'employees')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Job $Job = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $team = null;
+    #[ORM\ManyToOne(targetEntity: Team::class, inversedBy: 'employees')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Team $Team = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $office = null;
+    #[ORM\ManyToOne(targetEntity: Agency::class, inversedBy: 'employees')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Agency $Agency = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $pro_photo = null;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $picture_pro = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $fun_photo = null;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $picture_fun = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): static
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
     public function getFirstName(): ?string
     {
-        return $this->first_name;
+        return $this->firstName;
     }
 
-    public function setFirstName(string $first_name): static
+    public function setFirstName(string $firstName): static
     {
-        $this->first_name = $first_name;
+        $this->firstName = $firstName;
 
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getJob(): ?Job
     {
-        return $this->last_name;
+        return $this->Job;
     }
 
-    public function setLastName(string $last_name): static
+    public function setJob(?Job $Job): static
     {
-        $this->last_name = $last_name;
+        $this->Job = $Job;
 
         return $this;
     }
 
-    public function getJob(): ?string
+    public function getTeam(): ?Team
     {
-        return $this->job;
+        return $this->Team;
     }
 
-    public function setJob(string $job): static
+    public function setTeam(?Team $Team): static
     {
-        $this->job = $job;
+        $this->Team = $Team;
 
         return $this;
     }
 
-    public function getTeam(): ?string
+    public function getAgency(): ?Agency
     {
-        return $this->team;
+        return $this->Agency;
     }
 
-    public function setTeam(string $team): static
+    public function setAgency(?Agency $Agency): static
     {
-        $this->team = $team;
+        $this->Agency = $Agency;
 
         return $this;
     }
 
-    public function getOffice(): ?string
+    public function getPicturePro(): ?string
     {
-        return $this->office;
+        return $this->picture_pro;
     }
 
-    public function setOffice(string $office): static
+    public function setPicturePro(?string $picture_pro): void
     {
-        $this->office = $office;
-
-        return $this;
+        $this->picture_pro = $picture_pro;
     }
 
-    public function getProPhoto(): ?string
+    public function getPictureFun(): ?string
     {
-        return $this->pro_photo;
+        return $this->picture_fun;
     }
 
-    public function setProPhoto(string $pro_photo): static
+    public function setPictureFun(?string $picture_fun): void
     {
-        $this->pro_photo = $pro_photo;
-
-        return $this;
-    }
-
-    public function getFunPhoto(): ?string
-    {
-        return $this->fun_photo;
-    }
-
-    public function setFunPhoto(string $fun_photo): static
-    {
-        $this->fun_photo = $fun_photo;
-
-        return $this;
+        $this->picture_fun = $picture_fun;
     }
 }

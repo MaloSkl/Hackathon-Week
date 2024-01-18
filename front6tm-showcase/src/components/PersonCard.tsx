@@ -14,11 +14,11 @@ import RenderIcon from "./RenderIcon";
 const PersonCard = ({ person }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const proPhoto = person.photo_pro
-    ? person.photo_pro
+  const proPhoto = person.picturePro
+    ? person.picturePro
     : "/src/assets/blank.png";
-  const funPhoto = person.photo_fun
-    ? person.photo_fun
+  const funPhoto = person.pictureFun
+    ? person.pictureFun
     : "/src/assets/blank.png";
 
   const borderColor = isHovered ? "#C5C2FF" : "#51767A";
@@ -41,12 +41,12 @@ const PersonCard = ({ person }) => {
       </Box>
       <CardBody>
         <Heading fontSize="2xl">
-          {person.prenom} {person.nom}
+          {person.firstName} {person.name}
         </Heading>
         <HStack justifyContent={"space-between"}>
-          <Text>{person.poste}</Text>
+          <Text>{person.job}</Text>
           <Badge borderRadius="4px" backgroundColor="#7F56D9">
-            {person.agence}
+            {person.agency}
           </Badge>
         </HStack>
       </CardBody>

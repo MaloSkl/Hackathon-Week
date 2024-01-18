@@ -31,6 +31,7 @@ services:
       - database
     networks:
       - server-tier
+      - api-tier
 
   core_admin:
     container_name: core_admin
@@ -51,9 +52,13 @@ services:
       context: ./front6tm-showcase
     ports:
       - 5001:80
+    networks:
+      - api-tier
 
 networks:
-    admin-tier:
-        driver: bridge
-    server-tier:
-        driver: bridge
+  admin-tier:
+    driver: bridge
+  server-tier:
+    driver: bridge
+  api-tier:
+    driver: bridge
