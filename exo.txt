@@ -1,0 +1,29 @@
+        Projet PHP/Symfony
+
+https://trombi.6tmphp.fr/
+
+
+-ADD README.MD
+-Faire tourner le site web sur un docker
+    (+ 1 autre docker si easyAdmin utiliser)
+
+-Utiliser l'api 6TM
+    -afficher les données avec catégoris sur une page web
+    -Changement de photo au "on hover"
+    -optimiser le poid des photos
+
+-Admin - easyAdmin
+    (pouvoir changer des infos et les renvoyer à l'api)
+    -gestion des entité
+    -pole (RH, dev)
+    -employé (id, name, photo, description,etc)
+    (Nom, Prénom, poste, equipe, agence, photo_pro, photo_fun)
+
+-Gestion du Front-End: design
+    -react | vueJs ??
+
+-Test
+    -Unitaire
+    -intégrations (+mock si besoin)
+
+-Doc + github action ?
